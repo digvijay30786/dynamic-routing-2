@@ -1,23 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
-
+import Rou from './pages/Routes';
+import { Link } from "react-router-dom";
+import { AuthNav } from './components/context';
+import { useContext } from 'react';
 function App() {
+  const { isAuth } = useContext(AuthNav);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <nav>
+        <Link to='/'>Home</Link>
+        { isAuth? <Link to='/logout'>Logout</Link>: <Link to='/login'>Login</Link>}
+        <Link to='/dashboard'>Dashboard</Link>
+        <Link to='/setting'>Setting</Link>
+        <hr/>
+      </nav>
+      <Rou/>
     </div>
   );
 }
