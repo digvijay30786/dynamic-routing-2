@@ -12,7 +12,7 @@ function App() {
         <Link to='/'>Home</Link>
         { isAuth? <Link to='/logout'>Logout</Link>: <Link to='/login'>Login</Link>}
         <Link to='/dashboard'>Dashboard</Link>
-        <Link to='/setting'>Setting</Link>
+        <Link to='/dashboard/setting'>Setting</Link>
         <hr/>
       </nav>
       <Rou/>

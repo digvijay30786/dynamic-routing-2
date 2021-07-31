@@ -12,11 +12,11 @@ export default function Rou()
             <Route exact path="/">
                 <Home />
             </Route>
-            <PrivateRouter path="/setting">
-                <Setting />
-            </PrivateRouter>
-            <PrivateRouter path="/dashboard">
+            <PrivateRouter exact path="/dashboard">
                 <Dashboard />
+            </PrivateRouter>
+            <PrivateRouter path="/dashboard/setting">
+                <Setting />
             </PrivateRouter>
               <Route path="/login">
             <Login />
